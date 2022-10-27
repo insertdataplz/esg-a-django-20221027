@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary</title>
+</head>
+<body>
+    <h1>Diary</h1>
+
+    {% for memory in memory_list %}
+        <hr/>
+        <h2>
+            <a href="{{ memory.get_absolute_url }}">
+            {{ memory.title }}
+            </a>
+        </h2>
+        <h4>{{ memory.created_at }}</h4>
+        <p>{{ memory.content }}</p>
+    {% endfor %}
+
+    <hr/>
+    <a href="/diary/new/">새 다이어리 쓰기</a>
+
+</body>
+</html>
